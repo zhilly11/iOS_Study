@@ -18,6 +18,7 @@ class WriteDiaryViewController: UIViewController {
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var confirmButton: UIBarButtonItem!
     
+    //datePicker는 날짜 선택 가능하게 한다.
     private let datePicker = UIDatePicker()
     private var diaryDate: Date?
     weak var delegate: WriteDiaryViewDelegate?
@@ -32,17 +33,22 @@ class WriteDiaryViewController: UIViewController {
     }
     
     private func configureContentsTextView() {
+        // color 값에는 0~1사이의 값이 들어가야 한다.
         let borderColor = UIColor(red: 220/225, green: 220/225, blue: 220/225, alpha: 1.0)
+        //borderColor에는 cgColor로 설정해야한다.
         self.contentsTextView.layer.borderColor = borderColor.cgColor
         self.contentsTextView.layer.borderWidth = 0.5
         self.contentsTextView.layer.cornerRadius = 5.0
     }
     
+    //날짜를 선택할 수 있게 하는 함수
     private func configureDatePicker() {
+        // 날짜만 나오게
         self.datePicker.datePickerMode = .date
         self.datePicker.preferredDatePickerStyle = .wheels
         self.datePicker.addTarget(self, action: #selector(datePickerValueDidChange(_:)), for: .valueChanged)
         self.datePicker.locale = Locale(identifier: "ko-KR")
+        //키보드가 아닌 데이트 픽커로 나오게
         self.dateTextField.inputView = self.datePicker
     }
     
@@ -62,11 +68,14 @@ class WriteDiaryViewController: UIViewController {
     }
     
     @objc private func datePickerValueDidChange(_ datePicker: UIDatePicker) {
+        
         let formmater = DateFormatter()
+        //EEEEE는 요일 표현
         formmater.dateFormat = "yyyy년 MM월 dd일(EEEEE)"
         formmater.locale = Locale(identifier: "ko_KR")
         self.diaryDate = datePicker.date
         self.dateTextField.text = formmater.string(from: datePicker.date)
+        //날짜가 변경될때마다 editingChanged 액션 발생
         self.dateTextField.sendActions(for: .editingChanged)
     }
     
@@ -80,18 +89,20 @@ class WriteDiaryViewController: UIViewController {
         self.validateInputField()
     }
     
+    
+    //빈 화면을 터치했을때 키보드가 닫히게
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
     //데이터가 입력될때마다 호출해서 판단 비어있으면 안됨
     private func validateInputField() {
-        self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true) &&
-        !(self.dateTextField.text?.isEmpty ?? true) && !self.contentsTextView.text.isEmpty
+        self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true) && !(self.dateTextField.text?.isEmpty ?? true) && !self.contentsTextView.text.isEmpty
     }
 }
 
 extension WriteDiaryViewController: UITextViewDelegate {
+    //내용이 입력될때마다 호출
     func textViewDidChange(_ textView: UITextView) {
         self.validateInputField()
     }
