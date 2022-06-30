@@ -11,6 +11,7 @@
 FILE
 Pods/
 Weather/Weather/Storage.swift
+COVID19/COVID19/Storage.swift
 
 ### Swift ###
 # Xcode
