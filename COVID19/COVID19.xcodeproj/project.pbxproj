@@ -80,14 +80,14 @@
 			children = (
 				B42A3290286DCF4A003B7A84 /* AppDelegate.swift */,
 				B42A3292286DCF4A003B7A84 /* SceneDelegate.swift */,
-				B42A3294286DCF4A003B7A84 /* ViewController.swift */,
-				B42A3296286DCF4A003B7A84 /* Main.storyboard */,
-				B42A3299286DCF4B003B7A84 /* Assets.xcassets */,
-				B42A329B286DCF4B003B7A84 /* LaunchScreen.storyboard */,
-				B42A329E286DCF4B003B7A84 /* Info.plist */,
-				B42A32A4286DD5F1003B7A84 /* CovidDetailViewController.swift */,
-				B42A32A6286DE363003B7A84 /* CityCovidOverview.swift */,
 				B42A32AA286DE7E7003B7A84 /* Storage.swift */,
+				B42A32A6286DE363003B7A84 /* CityCovidOverview.swift */,
+				B42A3294286DCF4A003B7A84 /* ViewController.swift */,
+				B42A32A4286DD5F1003B7A84 /* CovidDetailViewController.swift */,
+				B42A3296286DCF4A003B7A84 /* Main.storyboard */,
+				B42A329B286DCF4B003B7A84 /* LaunchScreen.storyboard */,
+				B42A3299286DCF4B003B7A84 /* Assets.xcassets */,
+				B42A329E286DCF4B003B7A84 /* Info.plist */,
 			);
 			path = COVID19;
 			sourceTree = "<group>";

@@ -31,13 +31,12 @@ struct CityCovidOverview: Codable {
 }
 
 struct CovidOverView: Codable {
-    let countryNm : String
-    let totalCnt : Int
-    let recCnt : Int
-    let deathCnt : Int
-    let isolCnt : Int
-    let qurRate : Int
-    let incDec : Int
-    let incDecK : Int
-    let incDecF : Int
+    let countryName : String
+    let newCase : String
+    let totalCase : String
+    let recovered : String
+    let death : String
+    let percentage : String
+    let newCcase : String
+    let newFcase : String
 }
