@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-R5-VMX">
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-R5-VMX">
                                 <rect key="frame" x="24" y="112" width="366" height="61"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vpf-Fk-G06">
@@ -55,15 +55,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVm-4Z-nH4" customClass="PieChartView" customModule="Charts">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVm-4Z-nH4" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="24" y="197" width="366" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3Lg-4R-t7n">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3Lg-4R-t7n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7bd-Ou-6de"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dTR-R5-VMX" secondAttribute="trailing" constant="24" id="9aU-yZ-eQR"/>
+                            <constraint firstItem="3Lg-4R-t7n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A5w-6Z-D8H"/>
                             <constraint firstItem="dTR-R5-VMX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="ApC-2E-G41"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IVm-4Z-nH4" secondAttribute="trailing" constant="24" id="Ojh-pV-br2"/>
                             <constraint firstItem="IVm-4Z-nH4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="WlK-bM-ft1"/>
@@ -74,6 +79,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="QNL-un-8mk"/>
                     <connections>
+                        <outlet property="indicatorView" destination="3Lg-4R-t7n" id="5iN-2i-ZzA"/>
+                        <outlet property="labelStackView" destination="dTR-R5-VMX" id="0Tt-2g-MZC"/>
                         <outlet property="newCaseLabel" destination="gdv-cZ-Lau" id="ENj-25-qZU"/>
                         <outlet property="pieChartView" destination="IVm-4Z-nH4" id="N6O-UD-NcZ"/>
                         <outlet property="totalCaseLabel" destination="H9M-RJ-r2U" id="zBN-X5-rAS"/>

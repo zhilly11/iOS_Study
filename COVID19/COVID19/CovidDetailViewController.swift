@@ -33,10 +33,10 @@ class CovidDetailViewController: UITableViewController {
         self.newCaseCell.detailTextLabel?.text = "\(covidOverview.newCase)명"
         self.totalCaseCell.detailTextLabel?.text = "\(covidOverview.totalCase)명"
         self.recoveredCell.detailTextLabel?.text = "\(covidOverview.recovered)명"
-        self.deathCell.detailTextLabel?.text = "\(covidOverview.death)"
-        self.percentageCell.detailTextLabel?.text = "\(covidOverview.percentage)"
-        self.overseasInflowCell.detailTextLabel?.text = "\(covidOverview.newCcase)"
-        
+        self.deathCell.detailTextLabel?.text = "\(covidOverview.death)명"
+        self.percentageCell.detailTextLabel?.text = "\(covidOverview.percentage)%"
+        self.overseasInflowCell.detailTextLabel?.text = "\(covidOverview.newCcase)명"
+        self.regionalOutbreakCell.detailTextLabel?.text = "\(covidOverview.newFcase)명"
     }
     
     
