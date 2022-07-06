@@ -51,7 +51,7 @@ class EnterEmailViewController:UIViewController {
             if let error = error {
                 let code = (error as NSError).code
                 switch code {
-                case 170077: //이미 가입한 계정일 때
+                case 17007: //이미 가입한 계정일 때
                     self.loginUser(withEmail: email, password: password)
                     //로그인하기
                 default:

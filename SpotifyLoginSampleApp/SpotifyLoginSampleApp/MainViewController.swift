@@ -38,7 +38,19 @@ class MainViewController: UIViewController {
     /// 로그아웃 버튼
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
-        //RootViewController 로 이동
-        self.navigationController?.popToRootViewController(animated: true)
+        let firebaseAuth = Auth.auth()
+        
+        //에러처리를 위한 구현은 do try catch문으로
+        do {
+            // 로그아웃 실행
+            try firebaseAuth.signOut()
+            //RootViewController 로 이동
+            self.navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+            print("ERROR: signout \(signOutError.localizedDescription)")
+        }
+        
+        
+        
     }
 }
