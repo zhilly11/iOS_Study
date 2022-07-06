@@ -33,7 +33,8 @@ class EnterEmailViewController:UIViewController {
         
         //Navi Bar 보이기
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationItem.titleView?.tintColor = UIColor.white
+        //Navi Bar title color 변경
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
     }
     

@@ -218,6 +218,49 @@
             </objects>
             <point key="canvasLocation" x="1257" y="82"/>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="spT-7z-vuQ">
+            <objects>
+                <viewController id="Y5N-z9-aoo" customClass="MainViewController" customModule="SpotifyLoginSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yS3-zO-Ytf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="환영합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vt8-RC-X2c">
+                                <rect key="frame" x="149.5" y="438" width="115" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-SA-yXw">
+                                <rect key="frame" x="163.5" y="488" width="87" height="36"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그아웃">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="Y5N-z9-aoo" eventType="touchUpInside" id="3Sr-W2-MQW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MGu-Yh-waB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Geg-SA-yXw" firstAttribute="top" secondItem="vt8-RC-X2c" secondAttribute="bottom" constant="20" id="34k-a7-jJq"/>
+                            <constraint firstItem="vt8-RC-X2c" firstAttribute="centerX" secondItem="MGu-Yh-waB" secondAttribute="centerX" id="R1u-ZJ-MeH"/>
+                            <constraint firstItem="vt8-RC-X2c" firstAttribute="centerY" secondItem="MGu-Yh-waB" secondAttribute="centerY" id="ekA-R2-093"/>
+                            <constraint firstItem="Geg-SA-yXw" firstAttribute="centerX" secondItem="MGu-Yh-waB" secondAttribute="centerX" id="yHw-7B-Itd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="welcomLabel" destination="vt8-RC-X2c" id="bUN-rs-rlJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dM5-nM-nlw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2132" y="82"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo_apple" width="33.333332061767578" height="33.333332061767578"/>
